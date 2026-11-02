@@ -25,7 +25,7 @@ jobs:
 
       - name: Install dependencies & Run Tests
         run: |
-          npm ci
+          npm install
           npm test --if-present
 
       - name: Helm Lint
