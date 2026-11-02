@@ -43,7 +43,7 @@ jobs:
       - name: Configure AWS Credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::123456789012:role/GitHubActionsDeployerRole
+          role-to-assume: arn:aws:iam::557690607676:role/GitHubActionsDeployerRole
           aws-region: eu-west-1
 
       - name: Log in to Amazon ECR
@@ -62,7 +62,7 @@ jobs:
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
 
       - name: Update Kubeconfig
-        run: aws eks update-kubeconfig --name demoapp-cluster --region eu-west-1
+        run: aws eks update-kubeconfig --name demoapp-cluster --region us-east-2
 
       - name: Deploy Helm Chart
         run: |
